@@ -1,5 +1,5 @@
-// const chatForm = document.getElementById('chat-form');
-// const chatMessages = document.querySelector('.chat-messages');
+const chatForm = document.getElementById('chat-form');
+const chatMessages = document.querySelector('.chat-messages');
 // const roomName = document.getElementById('room-name');
 // const userList = document.getElementById('users');
 
@@ -22,18 +22,19 @@ const socket = io();
 // Message from server
 socket.on('message', message => {
   console.log(message);
-//   outputMessage(message);
+  outputMessage(message);
 
 //   // Scroll down
-//   chatMessages.scrollTop = chatMessages.scrollHeight;
+  chatMessages.scrollTop = chatMessages.scrollHeight;
 });
 
-// // Message submit
-// chatForm.addEventListener('submit', (e) => {
-//   e.preventDefault();
+// Message submit
+chatForm.addEventListener('submit', (e) => {
+  e.preventDefault();
 
-//   // Get message text
-//   let msg = e.target.elements.msg.value;
+  // Get message text
+  const msg = e.target.elements.msg.value;
+//   console.log(msg);
 
 //   msg = msg.trim();
 
@@ -41,18 +42,22 @@ socket.on('message', message => {
 //     return false;
 //   }
 
-//   // Emit message to server
-//   socket.emit('chatMessage', msg);
+  // Emit message to server
+  socket.emit('chatMessage', msg);
 
 //   // Clear input
 //   e.target.elements.msg.value = '';
 //   e.target.elements.msg.focus();
-// });
+});
 
 // // Output message to DOM
-// function outputMessage(message) {
-//   const div = document.createElement('div');
-//   div.classList.add('message');
+function outputMessage(message) {
+  const div = document.createElement('div');
+  div.classList.add('message');
+  div.innerHTML = `<p class="meta">Mary <span>9:15pm</span></p>
+  <p class="text">
+      ${message}
+  </p>`;
 //   const p = document.createElement('p');
 //   p.classList.add('meta');
 //   p.innerText = message.username;
@@ -62,8 +67,8 @@ socket.on('message', message => {
 //   para.classList.add('text');
 //   para.innerText = message.text;
 //   div.appendChild(para);
-//   document.querySelector('.chat-messages').appendChild(div);
-// }
+  document.querySelector('.chat-messages').appendChild(div);
+}
 
 // // Add room name to DOM
 // function outputRoomName(room) {
