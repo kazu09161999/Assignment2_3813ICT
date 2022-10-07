@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" /> -->
+  <link rel="stylesheet" href="/css/style.css">
+  <title>ChatCord App</title>
+</head>
+<body>
+  <h1><%= title %></h1>
+  <div class="main">
+    <input type="checkbox" id="chk" aria-hidden="true">
+      <!-- signup -->
+      <div class="signup">
+        <form action="/register" method="post">
+          <label for="chk" aria-hidden="true">Sign up</label>
+          <input type="text" name="name" placeholder="User name">
+          <input type="number" name="number" placeholder="Phone number">
+          <input type="email" name="email" placeholder="Email">
+          <input type="password" name="password" placeholder="Password">
+          <input type="password" name="cpassword" placeholder="Confirm Password">
+          <button type="submit">Sign up</button>
+        </form>
+      </div>
+      <!-- login -->
+      <div class="login">
+        <form action="/login" method="post">
+          <label for="chk" aria-hidden="true">Login</label>
+          <input type="email" ame="email" placeholder="Email" required="">
+          <input type="password" name="password" placeholder="Password" required="">
+          <button>Login</button>
+        </form>
+      </div>
+  </div>
+</body>
+</html>

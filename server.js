@@ -1,7 +1,13 @@
 const path = require('path');
 const http = require('http');
+const dotenv = require('dotenv');
+const morgan = require('morgan');
 const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const homeRouter = require('./routers/homeRouter');
 const socketio = require('socket.io');
+const connectDB = require('./database/connection');
 const formatMessage = require('./utils/messages');
 const { 
   userJoin, 
@@ -10,12 +16,22 @@ const {
   getRoomUsers
 } = require('./utils/users');
 
+dotenv.config({path:'config.env'})
+
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
+// mongo db connection
+
+connectDB();
+
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+app.use('/', homeRouter)
 
 const botName = 'ChatCord Bot';
 
