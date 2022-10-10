@@ -26,6 +26,9 @@ const io = socketio(server);
 
 connectDB();
 
+
+app.set('view engine', 'ejs')
+
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 

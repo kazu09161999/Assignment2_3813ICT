@@ -9,7 +9,9 @@
   <title>ChatCord App</title>
 </head>
 <body>
-  <h1><%= title %></h1>
+  <h1 style="color: rgb(34, 3, 3);"><%= title %></h1>
+  <h1 style="color: rgb(65, 211, 7);"><%= password %></h1>
+  <h1 style="color: rgb(255, 0, 200);"><%= email %></h1>
   <div class="main">
     <input type="checkbox" id="chk" aria-hidden="true">
       <!-- signup -->
@@ -26,7 +28,7 @@
       </div>
       <!-- login -->
       <div class="login">
-        <form action="/login" method="post">
+        <form method="post" action="/login">
           <label for="chk" aria-hidden="true">Login</label>
           <input type="email" ame="email" placeholder="Email" required="">
           <input type="password" name="password" placeholder="Password" required="">
