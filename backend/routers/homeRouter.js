@@ -60,7 +60,7 @@ Router.post('/login',(req,res)=>{
   homeSchema.findOne({email:email},(err, result)=>{
     console.log(result)
     // if(email === result.email && password === result.password){
-    //   res.render('dashboard', {name: result.name})
+    //   res.render('chat', {name: result.name})
     // }else{
     //   console.log(err)
     // }
