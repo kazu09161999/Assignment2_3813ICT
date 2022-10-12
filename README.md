@@ -39,3 +39,7 @@ Technical Explanation | This route receives user email and password to login wit
 
 
 #### Socket
+userJoin(): this method let user join to chat.
+getCurrentUser(): this method to get current user.
+userLeave(): this method let user leave from chat.
+getRoomUsers(): this method to get room users.
