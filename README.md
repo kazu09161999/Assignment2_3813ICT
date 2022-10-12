@@ -29,7 +29,7 @@ Method | post
 Parameters | user: {name: string, number: number, email: string, password: string}
 Technical Explanation | This route receives user information and if there is no error send it to mongoDB as registerusers
 
-Description | this route checks
+Description | this route checks user login
 ------------ | -------------
 Route | /login
 Method | post
