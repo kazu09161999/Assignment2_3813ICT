@@ -256,3 +256,12 @@ button:hover{
 #chk:checked ~ .signup label{
 	transform: scale(.6);
 }
+li {
+  float: left;
+}
+
+a {
+  display: block;
+  padding: 8px;
+	color: blue;
+}
