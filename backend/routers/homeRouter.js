@@ -35,13 +35,13 @@ Router.post('/register', async(req,res)=>{
       const useremail = await homeSchema.findOne({email:email});
       // console.log(useremail.email)
       if(email === useremail.email){
-        res.render('register',{title :'', password:'', email:'Email is already there pls choose different one'})
+        res.render('register',{title :'', password:'', email:'Email is already used pls choose different one'})
       }else{
         console.log('err')
       }
 
     }else{
-      res.render('register',{title :'', password:'Password not matching', email:''})
+      res.render('register',{title :'', password:'Password is not matching', email:''})
     }
 
   }catch(error){

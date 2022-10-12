@@ -36,7 +36,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use('/', homeRouter)
 
-const botName = 'ChatCord Bot';
+const botName = 'ChatApp Bot';
 
 // Run when client connects
 io.on('connection', socket => {
