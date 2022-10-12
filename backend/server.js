@@ -45,7 +45,7 @@ io.on('connection', socket => {
 
     socket.join(user.room);
     // Welcome current user
-    socket.emit('message', formatMessage(botName,'Welcome to This Application'));
+    socket.emit('message', formatMessage(botName,'Welcome to Chat Application'));
 
     // Broadcast when a user connects
     socket.broadcast
